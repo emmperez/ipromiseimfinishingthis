@@ -1,0 +1,133 @@
+.careers {
+    .careers_container {
+        display: flex;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        margin-top: 5rem;
+        .image-block {
+            position: relative;
+            width: 50%;
+            img.horizontal {
+                position: absolute;
+                z-index: 100;
+                left: 0;
+                top: 0;
+                transform: rotate(-0.025turn);
+            }
+            img.vert {
+                z-index: 99;
+                display: block;
+                margin: auto;
+                transform: rotate(0.025turn);
+            }
+        }
+        .heading {
+            float: right;
+            width: 50%;
+            h1 {
+                font-size: 10rem;
+                line-height: 8.5rem;
+                font-weight: 900;
+                text-transform: uppercase;
+                margin-bottom: 5rem;
+            }
+            h2 {
+                font-size: 0.9rem;
+                margin-bottom: 2rem;
+            }
+            p {
+                font-size: 3rem;
+                font-weight: 400;
+                span {
+                    font-weight: 400;
+                    font-size: 1rem;
+                    padding-left: 1rem;
+                }
+            }
+        }
+    }
+    .careers_info {
+        width: 50%;
+        margin: 7rem 0;
+        h2 {
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+        p {
+            font-size: 1.5rem;
+        }
+        a {
+            text-decoration: none;
+            font-size: 0.9rem;
+            color: #000;
+            ion-icon {
+                padding-right: .5rem;
+                font-size: 1rem;
+                vertical-align: middle;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .our-work .our-work__container .heading {
+        width: 100%;
+    }
+
+    .our-work .our-work__container .heading h3, .our-work .our-work__container .heading p {
+        text-align: left;
+    }
+    
+    .our-work .our-work__container .featured-work .heading {
+        h3 {
+            display: none;
+        }
+    }
+
+    .our-work .our-work__container .featured-work h1 {
+        font-size: 4.5rem;
+        margin-top: 1.5rem;
+        span {
+            font-size: 7rem;
+        }
+    }
+
+    .our-work .our-work__container .featured-work .heading {
+        width: 100%;
+    }
+
+    .our-work .our-work__container .item {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .careers .careers_container .image-block {
+        width: 100%;
+    }
+
+    .careers .careers_container .heading {
+        float: right;
+        width: 100%;
+    }
+
+    .careers .careers_container .heading h1, .careers .careers_container .heading .h1 {
+        font-size: 5rem;
+        line-height: 4.5rem;
+        margin-top: 5rem;
+    }
+
+    .careers .careers_container .heading p {
+        font-size: 2rem;
+
+        span {
+            display: block;
+            padding-left: 0px;
+        }
+    }
+
+    .careers .careers_info {
+        width: 100%;
+        margin: 2rem 0;
+    }
+}

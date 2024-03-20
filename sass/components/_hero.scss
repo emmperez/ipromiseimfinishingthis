@@ -1,0 +1,85 @@
+.hero {
+    height: auto;
+    width: 100%;
+    display: flex;
+    .hero-container {
+        align-self: center;
+        .hero-content {
+            width: 80%;
+            h1 {
+                font-size: 8rem;
+                line-height: 1;
+                text-transform: uppercase;
+            }
+            p {
+                font-size: 1rem;
+                line-height: 1;
+                text-transform: uppercase;
+            }
+        }
+    
+        .hero-featured {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+    
+            .featured-container {
+                position: relative;
+                height: 500px;
+                width: 23%;
+                
+                .featured-image {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+    
+                    img {
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;
+                    }
+                }
+    
+                .divider {
+                    margin: 0.5em 0;
+                    border: .5px solid #000;
+                }
+    
+                ul {
+                    display: flex;
+                    margin: 0.5em auto;
+                    padding: 0;
+    
+                    li {
+                        padding-right: 0.35em;
+                        text-transform: uppercase;
+                        font-size: 0.75rem;
+                    }
+                }
+                
+                p {
+                    font-size: 1rem;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+
+    .hero-content {
+        width: 100% !important;
+
+        h1 {
+            font-size: 2.75rem !important;
+        }
+        p {
+            font-size: .75rem !important;
+            }
+    }
+    .featured-container {
+        width: 100% !important;
+        margin-bottom: 5rem;
+    }
+  }

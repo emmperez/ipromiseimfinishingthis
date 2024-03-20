@@ -1,0 +1,105 @@
+footer {
+    .footer-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        .contact {
+            width: 30%;
+            h2 {
+                font-size: 0.9rem;
+                margin-bottom: 2rem;
+            }
+            p {
+                font-size: 1.5rem;
+                line-height: 1rem;
+            }
+            .links {
+                margin-top: 3.5rem;
+                display: flex;
+                a {
+                    cursor: pointer;
+                    text-decoration: none;
+                    color: #000;
+                    margin-right: 3.5rem;
+                    ion-icon {
+                        margin-right: 1rem;
+                    }
+                }
+                span {
+                    cursor: pointer;
+                    ion-icon {
+                        margin-right: 1rem;
+                    }
+                }
+            }
+        }
+        .heading {
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            p {
+                width: 50%;
+                font-size: 10rem;
+                font-weight: 900;
+            }
+        }    
+        .info {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            p {
+                flex-grow: 1;
+            }
+            ul {
+                display: flex;
+                flex-grow: 3;
+                li {
+                    margin: auto 1rem;
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 1200px) {
+    footer .footer-container .contact {
+        width: 100%;
+    }
+
+    footer .footer-container .contact h2, footer .footer-container .contact .h2 {
+        margin-bottom: 1rem;
+    }
+    
+    footer .footer-container .contact p {
+        line-height: 2rem;
+    }
+
+    footer .footer-container .heading p {
+        line-height: 9rem;
+    }
+
+    footer .footer-container .info {
+        margin-top: 2rem;
+    }
+
+    footer .footer-container .info ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    footer .footer-container .info p {
+        text-align: center;
+    }
+
+    footer .footer-container .contact .links {
+        margin: 1.5rem 0;
+    }
+
+    footer .footer-container .heading p {
+        width: 100%;
+        text-align: center;
+    }
+}

@@ -1,0 +1,120 @@
+.our-work {
+    .our-work__container {
+        width: 100%;
+        position: relative;
+        .item {
+            width: 100%;
+            padding: 0.125em 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            font-size: 2rem;
+            text-transform: uppercase;
+            border-bottom: 0.5px solid rgba($color: #000000, $alpha: 0.25);
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+
+            .img {
+                width: 125px;
+                height: 80px;
+                background-color: #fff;
+                transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+                overflow: hidden;
+                flex: 0;
+
+                img {
+                    width: 125px;
+                    height: auto;
+                    object-fit: cover;
+                }
+            }
+
+            .w1 {
+                text-align: right;
+            }
+        }
+
+        .item:hover {
+            gap: 20px;
+            cursor: pointer;
+        }
+
+        .item:hover .img {
+            flex: 0.1;
+        }
+
+        .featured-work {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            h1 {
+                font-size: 7rem;
+                line-height: 6rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                span {
+                    font-size: 8rem;
+                    font-weight: 700;
+                }
+            }
+            .heading {
+                width: 50%;
+                text-align: left;
+                float: right;
+    
+                h3 {
+                    text-align: left;
+                    text-transform: uppercase;
+                    font-size: 2.5rem;
+                }
+    
+                p {
+                    font-size: 1rem;
+                    font-weight: 300;
+                }
+            }
+        }
+        
+    }
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 1200px) {
+    .our-work .our-work__container .heading {
+        width: 100%;
+    }
+
+    .our-work .our-work__container .heading h3, .our-work .our-work__container .heading p {
+        text-align: left;
+    }
+    
+    .our-work .our-work__container .featured-work .heading {
+        h3 {
+            display: none;
+        }
+    }
+
+    .our-work .our-work__container .featured-work h1 {
+        font-size: 4.5rem;
+        margin-top: 1.5rem;
+        span {
+            font-size: 7rem;
+        }
+    }
+
+    .our-work .our-work__container .featured-work .heading {
+        width: 100%;
+    }
+
+    .our-work .our-work__container .item {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (min-width: 767px) and (max-width: 1200px) {
+    .careers .careers_container .heading h1, .careers .careers_container .heading .h1 {
+        font-size: 10rem !important;
+        line-height: 8rem !important;
+    }
+}
