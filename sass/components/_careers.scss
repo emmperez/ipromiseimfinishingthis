@@ -7,6 +7,9 @@
         .image-block {
             position: relative;
             width: 50%;
+            img {
+                max-width: 500px;
+            }
             img.horizontal {
                 position: absolute;
                 z-index: 100;
@@ -112,9 +115,12 @@
     }
 
     .careers .careers_container .heading h1, .careers .careers_container .heading .h1 {
-        font-size: 5rem;
-        line-height: 4.5rem;
+        font-size: 4.5rem;
+        line-height: 4rem;
         margin-top: 5rem;
+        br {
+            display: none;
+        }
     }
 
     .careers .careers_container .heading p {
@@ -129,5 +135,11 @@
     .careers .careers_info {
         width: 100%;
         margin: 2rem 0;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .careers .careers_container .image-block img {
+        max-width: 300px;
     }
 }
