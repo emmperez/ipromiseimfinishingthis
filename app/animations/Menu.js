@@ -46,8 +46,11 @@ export default class Menu {
             }
 
             document.querySelector("[data-open]").addEventListener("click", openMenu)
-            document.querySelector("[data-close]").addEventListener("click", closeMenu )
+            document.querySelector("[data-close]").addEventListener("click", closeMenu)
             tl.reverse()
+
+            document.querySelector(".menu-link").addEventListener("click", closeMenu)
+            document.querySelector(".btn").addEventListener("click", closeMenu)
         })
     }
 }

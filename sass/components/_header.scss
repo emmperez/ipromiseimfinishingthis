@@ -191,3 +191,9 @@ header {
         font-size: 30px;
     }
 }
+
+body.dark {
+    header nav a, header nav ion-icon {
+        color: #fff !important;
+    }
+}
