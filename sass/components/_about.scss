@@ -68,3 +68,9 @@
         margin: 0;
     }
 }
+
+@media only screen and (max-width: 600px) {
+    .callout p {
+        font-size: 1.275rem !important;
+    }
+}

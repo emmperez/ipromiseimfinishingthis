@@ -47,6 +47,9 @@ header {
 
         .menu-cols {
             display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
         }
 
         .menu-cols > div {
@@ -61,7 +64,7 @@ header {
         .video-preview {
             width: 100%;
             height: 0;
-            background: url(../../public/our-studio-hero.jpg);
+            background: url(our-studio-hero.jpg);
             background-size: cover;
             border-radius: 4px;
         }
@@ -160,6 +163,7 @@ header {
         .menu-footer-copy {
             display: flex;
             justify-content: space-between;
+            flex-wrap: wrap;
         }
 
         .socials {
@@ -192,8 +196,21 @@ header {
     }
 }
 
-body.dark {
-    header nav a, header nav ion-icon {
-        color: #fff !important;
+@media only screen and (max-width: 600px) {
+    .menu-cols .col {
+        width: 100%;
+        display: contents;
+
+        .video {
+            width: 100%;
+        }
+
+        .menu-link, .btn {
+            width: 100%;
+        }
+    }
+
+    .menu-footer-copy .slogan p {
+        margin-top: 1rem;
     }
 }
