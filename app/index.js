@@ -1,9 +1,9 @@
 import '../sass/style.scss'
 import Lenis from '@studio-freight/lenis';
-import Observer from './classes/Observer';
 import Menu from './animations/Menu';
 import Featured from './animations/Featured';
 import TextReveal from './animations/TextReveal';
+import AnimateFooter from './animations/AnimateFooter'
 
 class App {
     constructor() {
@@ -11,6 +11,7 @@ class App {
         this._render();
         this._animate();
         this._createTextReveals();
+        this._createFooterAnimation();
     }
 
     _createLenis() {
@@ -27,6 +28,7 @@ class App {
     _animate() {
         new Menu();
         new Featured();
+        new AnimateFooter();
     }
 
     _createTextReveals() {
@@ -37,7 +39,7 @@ class App {
                 element: text,
             })
         })
-    } 
+    }
     
 }
 

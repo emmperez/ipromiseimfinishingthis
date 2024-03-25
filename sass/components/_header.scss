@@ -11,13 +11,13 @@ header {
         display: flex;
         justify-content: space-between;
         padding: 1em 0;
-        color: #000;
+        color: #000 !important;
         backdrop-filter: blur(3.5px);
         border-bottom: 1px solid rgba($color: #fff, $alpha: 0.05);
 
         a {
             text-decoration: none;
-            color: #000;
+            color: #000 !important;
         }
     }
 
@@ -42,7 +42,10 @@ header {
             display: flex;
             justify-content: space-between;
             margin-bottom: 1em;
-            color: #000;
+            color: #000 !important;
+            ion-icon {
+                color: #000 !important;
+            }
         }
 
         .menu-cols {
@@ -74,7 +77,7 @@ header {
             display: flex;
             justify-content: space-between;
             padding: 0.5em 0;
-            color: #000;
+            color: #000 !important;
 
             p {
                 display: flex;
@@ -83,6 +86,7 @@ header {
 
             ion-icon {
                 margin-right: 0.25rem;
+                color: #000 !important;
             }
         }
 
@@ -92,7 +96,7 @@ header {
 
             a {
                 font-size: 40px;
-                color: #000;
+                color: #000 !important;
                 text-decoration: none;
             }
         }
@@ -123,7 +127,7 @@ header {
             cursor: pointer;
 
             a {
-                color: #000;
+                color: #000 !important;
             }
         }
 
@@ -140,7 +144,7 @@ header {
         }
 
         .btn:hover a {
-            color: #fff;
+            color: #fff !important;
         }
 
         .btn:hover.btn:before {
@@ -150,7 +154,7 @@ header {
         .menu-footer {
             display: flex;
             flex-direction: column;
-            color: #000;
+            color: #000 !important;
         }
 
         .menu-divider {
@@ -171,7 +175,7 @@ header {
             gap: 1em;
             
             a {
-                color: #000;
+                color: #000 !important;
                 text-decoration: none;
             }
         }

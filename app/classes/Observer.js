@@ -1,5 +1,5 @@
 export default class Observer {
-    constructor({ element }) {
+    constructor({ element, footer }) {
         this.element = element;
         this._createObserver();
     }
