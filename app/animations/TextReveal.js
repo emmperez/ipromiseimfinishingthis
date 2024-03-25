@@ -2,7 +2,7 @@ import { gsap } from "gsap"
 import SplitType from "split-type"
 import Observer from "../classes/Observer"
 
-export default class Home extends Observer {
+export default class TextReveal extends Observer {
     constructor({ element }) {
         super({ element })
         this.element = element;

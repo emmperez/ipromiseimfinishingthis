@@ -3,7 +3,7 @@ import Lenis from '@studio-freight/lenis';
 import Observer from './classes/Observer';
 import Menu from './animations/Menu';
 import Featured from './animations/Featured';
-import Home from './animations/Home';
+import TextReveal from './animations/TextReveal';
 
 class App {
     constructor() {
@@ -33,7 +33,7 @@ class App {
         const textItems = [...document.querySelectorAll('[data-animation="text-reveal"]')]
 
         textItems.forEach((text) => {
-            new Home({
+            new TextReveal({
                 element: text,
             })
         })
