@@ -18,7 +18,7 @@ export default class AnimateFooter {
                     trigger: ".footer-container",
                     scrub: true,
                     end: 'top center',
-                    markers: true,
+                    // markers: true,
                 },
                 backgroundColor: '#000',
             })
@@ -29,7 +29,7 @@ export default class AnimateFooter {
                     trigger: ".footer-container",
                     scrub: true,
                     end: 'top center',
-                    markers: true,
+                    // markers: true,
                 },
                 color: '#fff'
             })
