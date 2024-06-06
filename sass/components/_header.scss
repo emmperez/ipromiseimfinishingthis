@@ -200,6 +200,10 @@ header {
 }
 
 @media only screen and (max-width: 600px) {
+    header {
+        height: 60px;
+    }
+
     .menu-cols .col {
         width: 100%;
         display: contents;
