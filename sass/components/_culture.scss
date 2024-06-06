@@ -266,3 +266,79 @@
         height: 100%;
     }
 }
+
+@media only screen and (min-width: 768px) {
+
+    .subpage-banner .hero-info {
+        width: 100%;
+    }
+
+    .subpage-banner .hero-info h1 {
+        font-size: 6rem;
+        line-height: 5.5rem;
+    }
+
+    .subpage-banner .hero-info p {
+        font-size: 1rem;
+    }
+
+    .our-culture .our-culture__info {
+        width: 100%;
+    }
+
+    .our-culture {
+        margin: 3rem 0;
+    }
+
+    .our-culture .our-culture__info h2 {
+        font-size: 4rem;
+        line-height: 4.5rem;
+    }
+
+    .team h2, .team .h2 {
+        font-size: 7rem;
+        line-height: 6rem;
+    }
+
+    .team .team-content .team-image {
+        width: 50%;
+    }
+
+    .team .team-content .team-image img {
+        width: 100%;
+        transform: rotate(0);
+    }
+
+    .team .team-content .team-info {
+        width: 50%;
+    }
+
+    .meet-the-team {
+        margin: 3rem 0;
+    }
+
+    .meet-the-team h2, .meet-the-team .h2 {
+        font-size: 7rem;
+        line-height: 6rem;
+    }
+
+    .meet-the-team .team-desc {
+        margin: 3rem 0;
+    }
+
+    .meet-the-team .team-desc h3 {
+        font-size: 2rem;
+    }
+
+    .meet-the-team .team-desc .we-are {
+        width: 100%;
+    }
+
+    .meet-the-team .team-desc .our-team {
+        width: 100%;
+    }
+
+    .meet-the-team .team-members .member {
+        width: 40%;
+    }
+}
