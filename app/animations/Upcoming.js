@@ -1,145 +1,119 @@
-// import { gsap } from "gsap";
+import { gsap } from "gsap";
 
-// let currentImageIndex = 2;
-// let currentContextIndex = 1;
-// const totalImages = 2;
-// let isAnimating = false;
+export default class Upcoming {
+    constructor() {
+        this.animateUpcoming()
+    }
+    animateUpcoming() {
+       document.addEventListener("DOMContentLoaded", function() {
+            const imageSources = [
+                '/impulse-upcoming-1.jpg',
+                '/impulse-upcoming-2.jpg',
+                '/impulse-upcoming-3.jpg',
+                '/impulse-upcoming-4.jpg',
+                '/impulse-upcoming-5.jpg'
+            ]
 
-// const sliderContent = [
-//     "LuminaPad",
-//     "Converse"
-// ]
+            const menuItems = document.querySelectorAll(".menu-item")
 
-// function splitTextIntoSpans(h1) {
-//     let elements = document.querySelectorAll(h1);
-//     elements.forEach((element) => {
-//         let text = element.innerText;
-//         let splitText = text
-//             .split("")
-//             .map(function (char) {
-//                 return `<span>${char === " " ? "&nbsp;&nbsp;" : char}</span>`;
-//             })
-//             .join("");
-//         element.innerHTML = splitText;
-//     });
-// }
+            menuItems.forEach((item) => {
+                    const copyElements = item.querySelectorAll(".info, .name, .tag");
 
-// export default class Upcoming {
-//     constructor() {
-//         this.animateUpcoming()
-//     }
-//     animateUpcoming() {
-//         document.addEventListener("DOMContentLoaded", () => {
-            
-//             gsap.to(".slide-next-img", {
-//                 clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)", 
-//                 duration: 1.5,
-//                 ease: "power3.out", 
-//                 delay: 1,
-//             });
+                    copyElements.forEach((div) => {
+                        const copy = div.querySelector("p"); 
 
-//             document.addEventListener("click", function() {
-//                 if (isAnimating) return;
+                        if (copy) {
+                            const duplicateCopy = document.createElement("p");
+                            duplicateCopy.textContent = copy.textContent;
+                            div.appendChild(duplicateCopy);
+                        }
+                    })
+            })
 
-//                 isAnimating = true;
+            const appendImages = (src) => {
+                    const preview1 = document.querySelector(".preview-img-1");
+                    const preview2 = document.querySelector(".preview-img-2");
 
-//                 splitTextIntoSpans(".slider-content-active h1");
-//                 gsap.to(".slide-active img", {
-//                     scale: 2,
-//                     duration: 2,
-//                     ease: "power3.out",
-//                 });
+                    const img1 = document.createElement("img");
+                    const img2 = document.createElement("img");
 
-//                 gsap.to(".slider-content-active h1 span", {
-//                     top: "-175px",
-//                     stagger: 0.05,
-//                     ease: "power3.out",
-//                     duration: 0.5,
-//                     onComplete: () => {
-//                         gsap.to(".slider-content-active", {
-//                             top: "-175px", 
-//                             duration: 0.25,
-//                             ease: "power3.out",
-//                         });
-//                     },
-//                 });
+                    img1.src = src;
+                    img1.style.clipPath = "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)";
 
-//                 splitTextIntoSpans(".slider-content-next h1");
-//                 gsap.set(".slider-content-next h1 span", { top: "200px" });
+                    img2.src = src;
+                    img2.style.clipPath = "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)";
 
-//                 gsap.to(".slider-content-next", {
-//                     top: "0",
-//                     duration: 1.125,
-//                     ease: "power3.out",
-//                     onComplete: () => {
-//                         document.querySelector(".slider-content-active").remove();
-//                         gsap.to(".slider-content-next h1 span", {
-//                             top: 0, 
-//                             stagger: 0.05,
-//                             ease: "power3.out",
-//                             duration: 0.5,
-//                         });
+                    preview1.appendChild(img1);
+                    preview2.appendChild(img2);
 
-//                         const nextContent = document.querySelector(".slider-content-next");
-//                         nextContent.classList.remove("slider-content-next");
-//                         nextContent.classList.add("slider-content-active");
-//                         nextContent.style.top = "0";
+                    gsap.to([img1, img2], {
+                        clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)", 
+                        duration: 1, 
+                        ease: "power3.out", 
+                        onComplete: function () {
+                            removeExtraImages(preview1);
+                            removeExtraImages(preview2);
+                        },
+                    })
+            };
 
-//                         currentContextIndex = (currentContextIndex + 1) % totalImages;
-//                         const newContentText = sliderContent[currentContextIndex];
-//                         const newcontentHTML = `<div class="slider-content-next" style="top: 200px;"><h1>${newContentText}</h1></div>`;
-//                         document.querySelector(".slider-content").insertAdjacentHTML("beforeend", newcontentHTML);
-//                     },
-//                 });
+            function removeExtraImages(container) {
+                    while (container.children.length > 10) {
+                        container.removeChild(container.firstChild);
+                    }
+            }
 
-//                 currentImageIndex = (currentImageIndex % totalImages) + 1;
-//                 const newSlideHTML = `
-//                     <div class="slide-next">
-//                         <div class="slide-next-img">
-//                             <img src="./public/upcoming-${currentImageIndex}.jpg" alt="" />
-//                         </div>
-//                     </div>
-//                 `;
-//                 document.querySelector(".slider").insertAdjacentHTML("beforeend", newSlideHTML);
+            document.querySelectorAll(".menu-item").forEach((item, index) => {
+                    item.addEventListener("mouseover", () => {
+                        mouseOverAnimation(item);
+                        appendImages(imageSources[index])
+                    })
 
-//                 gsap.to(".slider .slide-next:last-child .slide-next-img", {
-//                     clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-//                     duration: 1.5,
-//                     ease: "power3.out",
-//                     delay: 0.5
-//                 });
+                    item.addEventListener("mouseout", () => {
+                        mouseOutAnimation(item);
+                    });
+            });
 
-//                 const slideNextImg = document.querySelector(".slide-next-img");
-//                 gsap.to(slideNextImg, {
-//                     width: "100vw",
-//                     height: "100vh",
-//                     duration: 2,
-//                     ease: "power3.out",
-//                     onComplete: () => {
-//                         const currentActiveSlide = document.querySelector(".slide-active");
-//                         if (currentActiveSlide) {
-//                             currentActiveSlide.parentNode.removeChild(currentActiveSlide);
-//                         }
+            const mouseOverAnimation = (elem) => {
+                    gsap.to(elem.querySelectorAll("p:nth-child(1)"), {
+                        top: "-100%",
+                        duration: 0.3,
+                    })
+                    gsap.to(elem.querySelectorAll("p:nth-child(2)"), {
+                        top: "0%",
+                        duration: 0.3,
+                    })
+            }
 
-//                         const nextSlide = document.querySelector(".slide-next");
-//                         if (nextSlide) {
-//                             nextSlide.classList.remove("slide-next");
-//                             nextSlide.classList.add("slide-active");
+            const mouseOutAnimation = (elem) => {
+                    gsap.to(elem.querySelectorAll("p:nth-child(1)"), {
+                        top: "0%",
+                        duration: 0.3,
+                    })
+                    gsap.to(elem.querySelectorAll("p:nth-child(2)"), {
+                        top: "-100%",
+                        duration: 0.3,
+                    })
+            }
 
-//                             const nextSlideImg = nextSlide.querySelector(".slide-next-img");
-//                             if (nextSlide) {
-//                                 nextSlideImg.classList.remove("slide-next-img");
-//                             }
-//                         }
+            document.querySelector(".menu").addEventListener("mouseout", function() {
+                gsap.to(".preview-img img", {
+                    clipPath: "polygon(0% 0%, 100% 0, 100% 0%, 0% 0%", 
+                    duration: 1, 
+                    ease: "power3.out",
+                })
+            })
 
-//                         setTimeout(() => {
-//                             isAnimating = false;
-//                         }, 500)
-//                     }
-//                 })
-//             });
+            document.addEventListener("mousemove", function (e) {
+                const preview = document.querySelector(".preview");
 
-            
-//         });
-//     }
-// }
+                gsap.to(preview, {
+                    x: e.clientX + 300, 
+                    y: e.clientY, 
+                    duration: 1,
+                    ease: "power3.out",
+                })
+            })
+        })
+    }
+}

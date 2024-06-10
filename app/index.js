@@ -4,6 +4,7 @@ import Menu from './animations/Menu';
 import Featured from './animations/Featured';
 import TextReveal from './animations/TextReveal';
 import AnimateFooter from './animations/AnimateFooter'
+import Upcoming from './animations/Upcoming';
 
 class App {
     constructor() {
@@ -29,6 +30,7 @@ class App {
         new Menu();
         new Featured();
         new AnimateFooter();
+        new Upcoming();
     }
 
     _createTextReveals() {
