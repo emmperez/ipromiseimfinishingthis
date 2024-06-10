@@ -49,28 +49,43 @@
         .featured-work {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: flex-start;
             flex-wrap: wrap;
-            h1 {
-                font-size: 8rem;
-                line-height: 7rem;
-                font-weight: 700;
-                text-transform: uppercase;
-            }
+            margin: 2rem 0;
             .heading {
-                width: 50%;
-                text-align: left;
-                float: right;
-    
-                h3 {
+                width: 100%;
+                h1 {
+                    font-size: 8rem;
+                    line-height: 7rem;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                }
+            }
+
+            .info {
+                width: 30%;
+                h4 {
+                    text-align: left;
+                    font-size: 4rem;
+                    line-height: 3.5rem;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                }
+                p {
+                    font-size: 1.5rem;
+                    line-height: 1.2;
+                    font-weight: 300;
                     text-align: left;
                     text-transform: uppercase;
-                    font-size: 2.5rem;
                 }
-    
+            }
+
+            .callout {
+                width: 70%;
+
                 p {
-                    font-size: 1rem;
-                    font-weight: 300;
+                    font-size: 2.5rem;
+                    line-height: 1.2;
                 }
             }
         }
