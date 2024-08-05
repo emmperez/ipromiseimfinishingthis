@@ -96,13 +96,13 @@ export default class Upcoming {
                     })
             }
 
-            document.querySelector(".menu").addEventListener("mouseout", function() {
-                gsap.to(".preview-img img", {
-                    clipPath: "polygon(0% 0%, 100% 0, 100% 0%, 0% 0%", 
-                    duration: 1, 
-                    ease: "power3.out",
-                })
-            })
+            // document.querySelector(".menu").addEventListener("mouseout", function() {
+            //     gsap.to(".preview-img img", {
+            //         clipPath: "polygon(0% 0%, 100% 0, 100% 0%, 0% 0%", 
+            //         duration: 1, 
+            //         ease: "power3.out",
+            //     })
+            // })
 
             document.addEventListener("mousemove", function (e) {
                 const preview = document.querySelector(".preview");

@@ -12,7 +12,6 @@ class App {
         this._render();
         this._animate();
         this._createTextReveals();
-        this._createFooterAnimation();
     }
 
     _createLenis() {
@@ -25,7 +24,6 @@ class App {
         this.lenis.raf(time);
         requestAnimationFrame(this._render.bind(this))
     }
-
     _animate() {
         new Menu();
         new Featured();
@@ -42,7 +40,7 @@ class App {
             })
         })
     }
-    
+
 }
 
 new App();

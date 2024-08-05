@@ -20,6 +20,6 @@ export default class TextReveal extends Observer {
     }
 
     onLeave() {
-
+        // nothing...
     }
 }
