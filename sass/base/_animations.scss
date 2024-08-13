@@ -30,3 +30,10 @@ pointer-events: none;
         will-change: transform;
     }
 }
+
+[data-animation="parallax-image"] {
+    overflow: hidden;
+    img {
+        height: 150% !important;
+    }
+}

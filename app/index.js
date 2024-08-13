@@ -5,6 +5,7 @@ import Featured from './animations/Featured';
 import TextReveal from './animations/TextReveal';
 import AnimateFooter from './animations/AnimateFooter'
 import Upcoming from './animations/Upcoming';
+import ParallaxImage from './animations/ParallaxImage';
 
 class App {
     constructor() {
@@ -12,6 +13,7 @@ class App {
         this._render();
         this._animate();
         this._createTextReveals();
+        this._createParallaxImage();
     }
 
     _createLenis() {
@@ -37,6 +39,16 @@ class App {
         textItems.forEach((text) => {
             new TextReveal({
                 element: text,
+            })
+        })
+    }
+
+    _createParallaxImage() {
+        const images = [...document.querySelectorAll('[data-animation="parallax-image"]')]
+
+        images.forEach((image) => {
+            new ParallaxImage   ({
+                imageSection: image,
             })
         })
     }
