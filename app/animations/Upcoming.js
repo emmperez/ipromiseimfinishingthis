@@ -9,9 +9,6 @@ export default class Upcoming {
        document.addEventListener("DOMContentLoaded", function() {
             if (document.body.classList.contains('upcoming')) {
 
-                const video = document.querySelector('video');
-                video.play();
-
                 const imageSources = [
                     '/impulse-upcoming-1.jpg',
                     '/impulse-upcoming-2.jpg',
