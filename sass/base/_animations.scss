@@ -3,31 +3,32 @@ html.lenis, html.lenis body {
 }
   
 .lenis.lenis-smooth {
-scroll-behavior: auto !important;
+    scroll-behavior: auto !important;
 }
 
 .lenis.lenis-smooth [data-lenis-prevent] {
-overscroll-behavior: contain;
+    overscroll-behavior: contain;
 }
 
 .lenis.lenis-stopped {
-overflow: hidden;
+    overflow: hidden;
 }
 
 .lenis.lenis-scrolling iframe {
-pointer-events: none;
+    pointer-events: none;
 }
+@media only screen and (min-width: 800px) {
+    [data-animation="text-reveal"] {
+        div {
+            display: inline-block;
+            overflow: hidden;
+            vertical-align: top;
+        }
 
-[data-animation="text-reveal"] {
-    div {
-        display: inline-block;
-        overflow: hidden;
-        vertical-align: top;
-    }
-
-    div div {
-        transform: translateY(100%);
-        will-change: transform;
+        div div {
+            transform: translateY(100%);
+            will-change: transform;
+        }
     }
 }
 

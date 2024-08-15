@@ -11,12 +11,18 @@ export default class TextReveal extends Observer {
     }
 
     onEnter() {
-        gsap.to(this.splitWords.words, {
-            y: '0%',
-            duration: 1.5,
-            stagger: 0.025, 
-            ease: 'power3'
-        })
+        // create
+        let mm = gsap.matchMedia();
+
+        mm.add("(min-width: 800px)", () => {
+            gsap.to(this.splitWords.words, {
+                y: '0%',
+                duration: 1.5,
+                stagger: 0.025, 
+                ease: 'power3'
+            })
+        });
+        mm.revert();
     }
 
     onLeave() {
