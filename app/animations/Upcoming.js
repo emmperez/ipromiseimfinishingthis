@@ -9,6 +9,8 @@ export default class Upcoming {
        document.addEventListener("DOMContentLoaded", function() {
             if (document.body.classList.contains('upcoming')) {
 
+                let mm = gsap.matchMedia();
+
                 const imageSources = [
                     '/impulse-upcoming-1.jpg',
                     '/impulse-upcoming-2.jpg',
@@ -49,15 +51,22 @@ export default class Upcoming {
                         preview1.appendChild(img1);
                         preview2.appendChild(img2);
 
-                        gsap.to([img1, img2], {
-                            clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)", 
-                            duration: 1, 
-                            ease: "power3.out", 
-                            onComplete: function () {
-                                removeExtraImages(preview1);
-                                removeExtraImages(preview2);
-                            },
-                        })
+                        mm.add("(min-width: 800px)", () => {
+                            gsap.to([img1, img2], {
+                                clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)", 
+                                duration: 1, 
+                                ease: "power3.out", 
+                                onComplete: function () {
+                                    removeExtraImages(preview1);
+                                    removeExtraImages(preview2);
+                                },
+                            })
+                            return () => {
+                                mm.revert();
+                            };
+                          });
+
+                       
                 };
 
                 function removeExtraImages(container) {
@@ -78,6 +87,7 @@ export default class Upcoming {
                 });
 
                 const mouseOverAnimation = (elem) => {
+                    mm.add("(min-width: 800px)", () => {
                         gsap.to(elem.querySelectorAll("p:nth-child(1)"), {
                             top: "-100%",
                             duration: 0.3,
@@ -86,9 +96,15 @@ export default class Upcoming {
                             top: "0%",
                             duration: 0.3,
                         })
+                        return () => { 
+                            mm.revert();
+                        };
+                    });
+                        
                 }
 
                 const mouseOutAnimation = (elem) => {
+                    mm.add("(min-width: 800px)", () => {
                         gsap.to(elem.querySelectorAll("p:nth-child(1)"), {
                             top: "0%",
                             duration: 0.3,
@@ -97,25 +113,42 @@ export default class Upcoming {
                             top: "-100%",
                             duration: 0.3,
                         })
+                        return () => { 
+                            mm.revert();
+                        };
+                    });
                 }
 
                 document.querySelector(".menu").addEventListener("mouseout", function() {
-                    gsap.to(".preview-img img", {
-                        clipPath: "polygon(0% 0%, 100% 0, 100% 0%, 0% 0%", 
-                        duration: 1, 
-                        ease: "power3.out",
-                    })
+                    mm.add("(min-width: 800px)", () => {
+                        gsap.to(".preview-img img", {
+                            clipPath: "polygon(0% 0%, 100% 0, 100% 0%, 0% 0%", 
+                            duration: 1, 
+                            ease: "power3.out",
+                        })
+                        return () => { 
+                            mm.revert();
+                        };
+                    });
+                    
                 })
 
                 document.addEventListener("mousemove", function (e) {
                     const preview = document.querySelector(".preview");
 
-                    gsap.to(preview, {
-                        x: e.clientX + 300, 
-                        y: e.clientY, 
-                        duration: 1,
-                        ease: "power3.out",
-                    })
+                    mm.add("(min-width: 800px)", () => {
+                        gsap.to(preview, {
+                            x: e.clientX + 300, 
+                            y: e.clientY, 
+                            duration: 1,
+                            ease: "power3.out",
+                        })
+                        return () => { 
+                            mm.revert();
+                        };
+                    });
+
+                    
                 })
 
             }

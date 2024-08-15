@@ -9,8 +9,7 @@ export default class Featured {
                 const items = document.querySelectorAll('.item');
 
                 items.forEach((item) => {
-                    item.addEventListener('mouseenter',
-                    shuffleAnimation);
+                    item.addEventListener('mouseenter', shuffleAnimation);
                 });
 
                 function getRandomCharacter() {

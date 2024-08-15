@@ -12,17 +12,26 @@ export default class ParallaxImage {
     }
 
     _animate() {
-        gsap.fromTo(this.image, {
-            y: -this.heightOffset
-        }, {
-            scrollTrigger: {
-                trigger: this.section,
-                start: 'clamp(top bottom)',
-                end: 'clamp(bottom top)', 
-                scrub: true,
-            },
-            y: 0, 
-            ease: 'none',
-        })
+        let mm = gsap.matchMedia();
+
+        mm.add("(min-width: 800px)", () => {
+            gsap.fromTo(this.image, {
+                y: -this.heightOffset
+            }, {
+                scrollTrigger: {
+                    trigger: this.section,
+                    start: 'clamp(top bottom)',
+                    end: 'clamp(bottom top)', 
+                    scrub: true,
+                },
+                y: 0, 
+                ease: 'none',
+            })
+        return () => { // optional
+            mm.revert();
+        };
+        });
+
+        
     }
 }

@@ -31,11 +31,12 @@ html.lenis, html.lenis body {
             will-change: transform;
         }
     }
-}
 
-[data-animation="parallax-image"] {
-    overflow: hidden;
-    img {
-        height: 150% !important;
+    [data-animation="parallax-image"] {
+        overflow: hidden;
+        img {
+            height: 150% !important;
+        }
     }
 }
+
