@@ -32,6 +32,12 @@
     }
 }
 
+.subpage-banner.privacy {
+    background-image:
+    linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(255, 255, 255, 0)),
+    url('/impulse-privacy-hero.jpg');
+}
+
 .our-culture {
     display: flex;
     justify-content: center;
