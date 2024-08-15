@@ -18,6 +18,21 @@ html.lenis, html.lenis body {
     pointer-events: none;
 }
 
+@media only screen and (max-width: 800px) {
+    html {
+        overflow: hidden;
+        width: 100%;
+      }
+    body {
+        height: 100%;
+        position: fixed;
+        /* prevent overscroll bounce*/
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+        /* iOS velocity scrolling */
+    }
+}
+
 @media only screen and (min-width: 800px) {
     [data-animation="text-reveal"] {
         div {
