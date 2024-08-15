@@ -21,8 +21,11 @@ export default class TextReveal extends Observer {
                 stagger: 0.025, 
                 ease: 'power3'
             })
+
+            return () => { // optional
+                mm.revert();
+              };
         });
-        mm.revert();
     }
 
     onLeave() {
