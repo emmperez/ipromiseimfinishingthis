@@ -21,7 +21,8 @@ class App {
 
     _createLenis() {
         this.lenis = new Lenis({
-            lerp: 0.15
+            lerp: 0.15,
+            syncTouch: true
         }) 
 
         this.lenis.on('scroll', ScrollTrigger.update)
