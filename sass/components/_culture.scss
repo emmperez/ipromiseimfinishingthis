@@ -24,7 +24,7 @@
         
         h1 {
             font-size: 9rem;
-            line-height: 8rem;
+            line-height: 11rem;
         }
         p {
             font-size: 1.25rem;
@@ -52,12 +52,6 @@
             font-size: 3rem;
             line-height: 3.5rem;
         }
-
-        // p {
-        //     font-size: 1.25rem;
-        //     font-weight: 300;
-        //     line-height: 1;
-        // }
     }
     .callout {
         width: 70%;
@@ -85,6 +79,7 @@
         img {
             height: auto;
             width: 55vw;
+            margin-top: 15vh;
         }
     }
 }
@@ -239,6 +234,7 @@
     .media-banner .image-container img {
         height: auto;
         width: 100%;
+        margin: 0;
     }
 
     .meet-the-team h2 {
