@@ -6,6 +6,9 @@ import TextReveal from './animations/TextReveal';
 import AnimateFooter from './animations/AnimateFooter'
 import Upcoming from './animations/Upcoming';
 import ParallaxImage from './animations/ParallaxImage';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/all';
+gsap.registerPlugin(ScrollTrigger)
 
 class App {
     constructor() {
@@ -20,6 +23,14 @@ class App {
         this.lenis = new Lenis({
             lerp: 0.15
         }) 
+
+        this.lenis.on('scroll', ScrollTrigger.update)
+
+        gsap.ticker.add((time)=>{
+        this.lenis.raf(time * 1000)
+        })
+
+        gsap.ticker.lagSmoothing(0)
     }
 
     _render(time) {
